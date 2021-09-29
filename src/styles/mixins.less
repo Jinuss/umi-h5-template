@@ -1,0 +1,20 @@
+@color-primary: #166666;
+
+@color-title: #222222;
+@color-text: #888888;
+@color-white: #ffffff;
+@color-border: #e8e8e8;
+
+.page() {
+  padding: 24px;
+  background-color: @color-white;
+  border-radius: 2px;
+}
+
+// 兼容iphonex机器的底部安全区域
+.fixBottomArea() {
+  /* ios < 11.2 */
+  padding-bottom: constant(safe-area-inset-bottom);
+  /* ios >= 11.2 */
+  padding-bottom: env(safe-area-inset-bottom);
+}

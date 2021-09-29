@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "build:prod": "cross-env SERVER_ENV=prod umi build",
+    "deploy": "cross-env SERVER_ENV=prod umi build && yarn upload",
+    "upload": "tcb hosting deploy ./dist sms/mch -e envId",
+    "analyze": "cross-env ANALYZE=1 umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "3.2.22",
+    "ahooks": "^2.7.1",
+    "antd-mobile": "^2.3.4",
+    "classnames": "^2.2.6",
+    "cross-env": "^7.0.2",
+    "dayjs": "^1.9.4",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.12.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "umi": "3.2.22",
+    "yorkie": "^2.0.0"
+  },
+  "devDependencies": {
+    "postcss-px-to-viewport": "^1.1.1"
+  }
+}

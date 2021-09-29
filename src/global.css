@@ -1,0 +1,14 @@
+/* 这里是全局css */
+* {
+  box-sizing: border-box;
+  font-family: PingFangSC-Regular, PingFang SC;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* 禁止触发长按选择 */
+  user-select: none;
+  -webkit-touch-callout: none;
+  font-size: 28px;
+}
